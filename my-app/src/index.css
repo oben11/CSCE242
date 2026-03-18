@@ -1,0 +1,1465 @@
+/* ===================================
+   Ollie's Coffee Company - Global Styles
+   =================================== */
+
+/* CSS Variables */
+:root {
+    --espresso: #2C1810;
+    --coffee-dark: #4A3428;
+    --latte: #D4A574;
+    --cream: #F5F1E8;
+    --accent: #C17C4A;
+    --bronze: #CD7F32;
+    --silver: #C0C0C0;
+    --gold: #FFD700;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    color: var(--espresso);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===================================
+   HEADER & NAVIGATION
+   =================================== */
+
+header {
+    background: linear-gradient(135deg, var(--espresso) 0%, var(--coffee-dark) 100%);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--cream);
+    letter-spacing: -0.5px;
+
+}
+.logo::after { display: none !important; }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--latte);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===================================
+   HERO SECTIONS
+   =================================== */
+
+.hero {
+    background: linear-gradient(165deg, var(--coffee-dark) 0%, var(--espresso) 50%, #1a0f0a 100%);
+    color: var(--cream);
+    padding: 8rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+    animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-50px, 50px) rotate(5deg); }
+}
+
+.hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.hero.animate h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.splash_0 {
+    background-image: url('./media/splash_0.jpg');
+}
+.splash_1 {
+    background-image: url('./media/splash_1.jpg');
+}
+.splash_2 {
+    background-image: url('./media/splash_2.jpg');
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+.hero.animate p {
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* Hero Variants */
+.hero.hero-simple {
+    background: linear-gradient(135deg, var(--coffee-dark), var(--espresso));
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.hero.hero-simple h1 {
+    font-size: 3.5rem;
+    animation: none;
+}
+
+.hero.hero-simple p {
+    animation: none;
+}
+
+.hero.hero-accent {
+    background: linear-gradient(135deg, var(--latte) 0%, var(--accent) 100%);
+    color: var(--espresso);
+}
+
+/* ===================================
+   BUTTONS & CTAs
+   =================================== */
+
+.cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.btn {
+    padding: 1rem 2.5rem;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--latte);
+    color: var(--espresso);
+    box-shadow: 0 4px 20px rgba(212, 165, 116, 0.4);
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(212, 165, 116, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--cream);
+    border: 2px solid var(--cream);
+}
+
+.btn-secondary:hover {
+    background: var(--cream);
+    color: var(--espresso);
+    transform: translateY(-3px);
+}
+
+/* Button variant for dark backgrounds */
+.btn-primary.btn-dark {
+    background: var(--espresso);
+    color: var(--cream);
+    box-shadow: 0 4px 20px rgba(44, 24, 16, 0.3);
+}
+
+.btn-primary.btn-dark:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 30px rgba(44, 24, 16, 0.4);
+}
+
+/* ===================================
+   SECTION TITLES
+   =================================== */
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--espresso);
+}
+
+/* ===================================
+   FILTER SECTIONS
+   =================================== */
+
+.filter-section {
+    padding: 2rem;
+    background: white;
+    border-bottom: 2px solid var(--cream);
+    top: 72px;
+    z-index: 50;
+}
+
+.filter-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.7rem 1.5rem;
+    background: var(--cream);
+    border: 2px solid var(--latte);
+    color: var(--espresso);
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--latte);
+    color: var(--espresso);
+    transform: translateY(-2px);
+}
+
+/* ===================================
+   CARD COMPONENTS
+   =================================== */
+
+.feature-card,
+.benefit-card,
+.value-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--latte), var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover,
+.benefit-card:hover,
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(44, 24, 16, 0.15);
+}
+
+.feature-card h3,
+.benefit-card h3,
+.value-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--espresso);
+}
+
+.feature-card p,
+.benefit-card p,
+.value-card p {
+    color: var(--coffee-dark);
+    font-size: 1.05rem;
+}
+
+.benefit-card {
+    padding: 2.5rem;
+    background: var(--cream);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--latte);
+    box-shadow: 0 10px 30px rgba(44, 24, 16, 0.1);
+}
+
+/* ===================================
+   GRIDS
+   =================================== */
+
+.features-grid,
+.benefits-grid,
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+/* ===================================
+   FEATURES SECTION (Homepage)
+   =================================== */
+
+.features {
+    padding: 6rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   SIGNATURE SECTION (Homepage)
+   =================================== */
+
+.signature {
+    background: linear-gradient(135deg, #1a0f0a 0%, var(--espresso) 50%, var(--coffee-dark) 100%);
+    color: var(--cream);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.signature::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 60%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+}
+
+.signature-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    flex:2;
+}
+.signature-image {
+    margin-left: 30px;
+    position: relative;
+    z-index: 2;
+    flex:1;
+    overflow:hidden
+}
+.signature img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.signature h2 {
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.signature p {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+
+
+/* ===================================
+   REWARDS PAGE - STEPS
+   =================================== */
+
+.how-it-works {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--latte), var(--accent));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+}
+
+.step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.step p {
+    font-size: 1.05rem;
+    color: var(--coffee-dark);
+}
+
+/* ===================================
+   REWARDS PAGE - BENEFITS
+   =================================== */
+
+.benefits {
+    background: white;
+    padding: 5rem 2rem;
+}
+
+/* ===================================
+   REWARDS PAGE - TIERS
+   =================================== */
+
+.tiers {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tier-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tier-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
+    border-top: 5px solid;
+    transition: all 0.3s ease;
+}
+
+.tier-card.bronze {
+    border-top-color: var(--bronze);
+}
+
+.tier-card.silver {
+    border-top-color: var(--silver);
+}
+
+.tier-card.gold {
+    border-top-color: var(--gold);
+    position: relative;
+    overflow: hidden;
+}
+
+.tier-card.gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), transparent);
+    pointer-events: none;
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(44, 24, 16, 0.15);
+}
+
+.tier-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.tier-card ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.tier-card li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(44, 24, 16, 0.1);
+}
+
+.tier-card li:last-child {
+    border-bottom: none;
+}
+
+/* ===================================
+   REWARDS PAGE - REDEMPTION
+   =================================== */
+
+.redemption {
+    background: linear-gradient(135deg, var(--latte), var(--coffee-dark));
+    color: var(--cream);
+    padding: 5rem 2rem;
+    margin-bottom: 5rem;
+}
+
+.redemption-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.redemption-list {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-top: 3rem;
+    backdrop-filter: blur(10px);
+}
+
+.redemption-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(245, 241, 232, 0.2);
+}
+
+.redemption-item:last-child {
+    border-bottom: none;
+}
+
+.redemption-item span:first-child {
+    font-size: 1.1rem;
+}
+
+.redemption-item span:last-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--latte);
+}
+
+/* ===================================
+   REWARDS PAGE - CTA SECTION
+   =================================== */
+
+.cta-section {
+    background: var(--latte);
+    padding: 5rem 2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+
+}
+
+.cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--espresso);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--coffee-dark);
+}
+
+/* ===================================
+   ABOUT PAGE - STORY
+   =================================== */
+
+.story {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.story-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
+}
+
+.story-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--coffee-dark);
+}
+
+/* ===================================
+   ABOUT PAGE - TIMELINE
+   =================================== */
+
+.timeline {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.timeline-container {
+    max-width: 1000px;
+    margin: 3rem auto 0;
+    position: relative;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--latte), var(--accent));
+}
+
+.timeline-item {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+    margin-right: auto;
+    padding-right: 3rem;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 3rem;
+}
+
+.timeline-content {
+    width: 50%;
+    position: relative;
+}
+
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--espresso);
+    color: var(--cream);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(44, 24, 16, 0.3);
+    z-index: 2;
+}
+
+.timeline-card {
+    background: var(--cream);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(44, 24, 16, 0.1);
+}
+
+.timeline-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: var(--espresso);
+}
+
+.timeline-card p {
+    color: var(--coffee-dark);
+    line-height: 1.7;
+}
+
+/* ===================================
+   ABOUT PAGE - VALUES
+   =================================== */
+
+.values {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   ABOUT PAGE - LOCATIONS
+   =================================== */
+
+.locations {
+    background: linear-gradient(135deg, var(--espresso), var(--coffee-dark));
+    color: var(--cream);
+    padding: 5rem 2rem;
+}
+
+.locations-grid {
+    max-width: 1400px;
+    margin: 3rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.location-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.location-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-5px);
+}
+
+.location-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--latte);
+}
+
+.location-card p {
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
+
+/* ===================================
+   ABOUT PAGE - BRAND GUIDELINES
+   =================================== */
+
+.brand-guidelines {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.color-swatch {
+    text-align: center;
+}
+
+.color-box {
+    height: 150px;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 20px rgba(44, 24, 16, 0.15);
+}
+
+.color-box.espresso {
+    background: var(--espresso);
+}
+
+.color-box.coffee-dark {
+    background: var(--coffee-dark);
+}
+
+.color-box.latte {
+    background: var(--latte);
+}
+
+.color-box.cream {
+    background: var(--cream);
+    border: 1px solid var(--latte);
+}
+
+.color-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+}
+
+.color-usage {
+    font-size: 0.95rem;
+    color: var(--coffee-dark);
+}
+
+.typography-section {
+    margin: 4rem 0;
+}
+
+.heading-sample {
+    margin: 2rem 0;
+}
+
+.heading-sample h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--espresso);
+    margin-bottom: 0.5rem;
+}
+
+.heading-sample h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--espresso);
+    margin-bottom: 0.5rem;
+}
+
+.heading-sample h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--espresso);
+    margin-bottom: 0.5rem;
+}
+
+.heading-sample p {
+    color: var(--coffee-dark);
+    margin-top: 1rem;
+}
+
+/* ===================================
+   MERCHANDISE PAGE - PRODUCTS
+   =================================== */
+
+.products {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(44, 24, 16, 0.15);
+}
+
+.product-image {
+    background: var(--cream);
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(193, 124, 74, 0.1));
+}
+
+.product-image img {
+    width: 150%;
+}
+
+.category-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--espresso);
+    color: var(--cream);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.product-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--espresso);
+}
+
+.product-info p {
+    color: var(--coffee-dark);
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.color-options,
+.size-options {
+    margin-bottom: 1rem;
+}
+
+.options-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    color: var(--coffee-dark);
+}
+
+.color-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color-dot {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid var(--cream);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.color-dot:hover {
+    transform: scale(1.2);
+    border-color: var(--latte);
+}
+
+.color-dot.white {
+    background: #ffffff;
+    border-color: var(--latte);
+}
+
+.color-dot.black {
+    background: #000000;
+}
+
+.color-dot.brown {
+    background: var(--coffee-dark);
+}
+
+.color-dot.silver {
+    background: #C0C0C0;
+}
+
+.color-dot.rose-gold {
+    background: #B76E79;
+}
+
+.color-dot.natural {
+    background: #D4C5B0;
+}
+
+.color-dot.cream {
+    background: var(--cream);
+    border-color: var(--latte);
+}
+
+.color-dot.navy {
+    background: #1B2A49;
+}
+
+.size-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.size-btn {
+    padding: 0.4rem 0.8rem;
+    background: var(--cream);
+    border: 1px solid var(--latte);
+    color: var(--espresso);
+    font-family: 'Lora', serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+    background: var(--latte);
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.add-btn {
+    padding: 0.8rem 1.5rem;
+    background: var(--espresso);
+    color: var(--cream);
+    border: none;
+    border-radius: 50px;
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+    background: var(--coffee-dark);
+    transform: scale(1.05);
+}
+
+/* ===================================
+   MERCHANDISE PAGE - WHY SHOP
+   =================================== */
+
+.why-shop {
+    background: white;
+    padding: 4rem 2rem;
+}
+
+.why-shop-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--espresso);
+}
+
+.benefit-item p {
+    color: var(--coffee-dark);
+}
+
+/* ===================================
+   MENU PAGE - MENU ITEMS
+   =================================== */
+
+.menu {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(44, 24, 16, 0.15);
+}
+
+.item-header {
+    background: linear-gradient(135deg, var(--latte), var(--accent));
+    padding: 1.5rem;
+    position: relative;
+}
+
+.item-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--espresso);
+    margin-bottom: 0.5rem;
+}
+
+.item-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-description {
+    color: var(--coffee-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.sizes {
+    margin-bottom: 1.5rem;
+}
+
+.size-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--cream);
+}
+
+.size-option:last-child {
+    border-bottom: none;
+}
+
+.size-name {
+    font-weight: 600;
+    color: var(--espresso);
+}
+
+.size-info {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.calories {
+    font-size: 0.9rem;
+    color: var(--coffee-dark);
+    opacity: 0.8;
+}
+
+.add-to-cart {
+    padding: 1rem;
+    background: var(--espresso);
+    color: var(--cream);
+    border: none;
+    border-radius: 50px;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.add-to-cart:hover {
+    background: var(--coffee-dark);
+    transform: scale(1.02);
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+footer {
+    background: var(--espresso);
+    color: var(--cream);
+    padding: 3rem 2rem 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--latte);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a:hover {
+    opacity: 1;
+    color: var(--latte);
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(245, 241, 232, 0.2);
+    opacity: 0.8;
+}
+
+.tagline {
+    font-style: italic;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.hidden { /* used by the script */
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* optional fade transition when you show/hide via JS that toggles classes */
+.menu-grid .menu-item,
+.products-grid .product-card {
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.hamburger {
+        all:unset;
+        cursor: pointer; 
+        color: var(--cream);
+        font-size: 1.5rem;
+        display: none;
+
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 968px) {
+    .timeline-container::before {
+        left: 30px;
+    }
+    
+    .timeline-year {
+        left: 30px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        width: 100%;
+        padding-left: 100px;
+        padding-right: 0;
+        margin: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    nav ul {
+        display: flex;
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - SMALL SCREENS
+   =================================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    header {
+        background: linear-gradient(135deg, var(--espresso) 0%, var(--coffee-dark) 100%);
+        padding: 0.1rem;
+        position: sticky;
+        align-items: start;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    nav {
+        display: flex;
+        flex-direction: row;   /* Stack items vertically */
+        align-items: center;      /* Center everything horizontally */
+        gap: 1rem;
+    }
+
+    .logo {
+        text-align: right;
+        align-self: flex-end;
+        justify-self: flex-start;
+    }
+    nav section {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex: 1;
+    }
+    
+    .hero {
+        padding: 5rem 1.5rem 4rem;
+    }
+    
+    .hero.hero-simple h1 {
+        font-size: 2.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 1.5rem;
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+
+    
+    .signature-image {
+        display: none;
+    }
+
+    .signature h2 {
+        font-size: 2.2rem;
+    }
+    
+    .tier-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

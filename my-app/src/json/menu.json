@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "House Blend Coffee",
+    "category": "Hot Coffee",
+    "description": "Our signature medium roast with notes of chocolate and caramel",
+    "sizes": [
+      { "name": "Small", "calories": 5, "price": 2.99 },
+      { "name": "Medium", "calories": 5, "price": 3.49 },
+      { "name": "Large", "calories": 10, "price": 3.99 }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Caramel Latte",
+    "category": "Espresso",
+    "description": "Espresso with steamed milk and rich caramel syrup",
+    "sizes": [
+      { "name": "Small", "calories": 250, "price": 4.49 },
+      { "name": "Medium", "calories": 320, "price": 4.99 },
+      { "name": "Large", "calories": 400, "price": 5.49 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Cappuccino",
+    "category": "Espresso",
+    "description": "Classic espresso with velvety foam",
+    "sizes": [
+      { "name": "Small", "calories": 120, "price": 3.99 },
+      { "name": "Medium", "calories": 150, "price": 4.49 },
+      { "name": "Large", "calories": 180, "price": 4.99 }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Iced Mocha",
+    "category": "Cold Beverages",
+    "description": "Espresso, milk, chocolate, and ice",
+    "sizes": [
+      { "name": "Small", "calories": 280, "price": 4.79 },
+      { "name": "Medium", "calories": 350, "price": 5.29 },
+      { "name": "Large", "calories": 420, "price": 5.79 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Cold Brew",
+    "category": "Cold Beverages",
+    "description": "Smooth, slow-steeped cold brew coffee",
+    "sizes": [
+      { "name": "Small", "calories": 5, "price": 3.99 },
+      { "name": "Medium", "calories": 5, "price": 4.49 },
+      { "name": "Large", "calories": 10, "price": 4.99 }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Matcha Latte",
+    "category": "Tea & Other",
+    "description": "Premium matcha with steamed milk",
+    "sizes": [
+      { "name": "Small", "calories": 190, "price": 4.99 },
+      { "name": "Medium", "calories": 240, "price": 5.49 },
+      { "name": "Large", "calories": 290, "price": 5.99 }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Chai Tea Latte",
+    "category": "Tea & Other",
+    "description": "Spiced chai with steamed milk",
+    "sizes": [
+      { "name": "Small", "calories": 200, "price": 4.29 },
+      { "name": "Medium", "calories": 260, "price": 4.79 },
+      { "name": "Large", "calories": 310, "price": 5.29 }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Espresso",
+    "category": "Espresso",
+    "description": "Bold, concentrated coffee shot",
+    "sizes": [
+      { "name": "Single", "calories": 5, "price": 2.49 },
+      { "name": "Double", "calories": 10, "price": 3.49 },
+      { "name": "Triple", "calories": 15, "price": 4.49 }
+    ]
+  }
+]
