@@ -10,14 +10,16 @@ header {
 nav {
     max-width: 1400px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* Logo and hamburger always sit on one line */
 .nav-top {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap:20px;
 }
 
 .logo {
@@ -74,6 +76,18 @@ nav {
 
 /* Mobile */
 @media (max-width: 768px) {
+
+    nav {
+        display: block;
+        justify-content: center;
+
+    }
+    .nav-top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:20px;
+    }
     .hamburger {
         display: inline-block;  /* show on mobile */
     }
