@@ -1,3 +1,13 @@
+header {
+    background: linear-gradient(135deg, var(--espresso) 0%, var(--coffee-dark) 100%);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+
 nav {
     max-width: 1400px;
     margin: 0 auto;

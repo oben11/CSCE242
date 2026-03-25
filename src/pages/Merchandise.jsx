@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import Hero from "../componets/Hero";
+
+
 
 export default function Merchandise() {
   return (
@@ -7,15 +10,9 @@ export default function Merchandise() {
     <meta charset="UTF-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&display=swap" rel="stylesheet"></link>
-    <script src="./scripts/merchandiseLoader.js" defer></script>
+    <script src="../scripts/merchandiseLoader.js" defer></script>
 
-    
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Official Merchandise</h1>
-          <p>Show your love for Ollie's with our exclusive branded products</p>
-        </div>
-      </section>
+      <Hero title="Official Merchandise" description="Show your love for Ollie's with our exclusive branded products" />
 
       <section className="filter-section">
         <div className="filter-container">

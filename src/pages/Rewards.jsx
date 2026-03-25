@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Hero from "../componets/Hero";
 
 export default function Rewards() {
     return (

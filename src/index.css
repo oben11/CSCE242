@@ -33,6 +33,7 @@ body {
    HEADER & NAVIGATION
    =================================== */
 
+
 header {
     background: linear-gradient(135deg, var(--espresso) 0%, var(--coffee-dark) 100%);
     padding: 1rem 2rem;

@@ -1,4 +1,5 @@
 import React from "react";
+import Hero from "../componets/Hero";
 
 const Menu = () => {
   return (
@@ -10,14 +11,7 @@ const Menu = () => {
     <script src="./scripts/menuLoader.js" defer></script>  {/* --- IGNORE NEEDS FIXING --- */}
 
 
-
-
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Our Menu</h1>
-          <p>Handcrafted beverages made with premium ingredients</p>
-        </div>
-      </section>
+     <Hero title="Our Menu" description="Handcrafted beverages made with premium ingredients" />
 
       <section className="filter-section">
         <div className="filter-container">
