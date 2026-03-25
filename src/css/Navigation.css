@@ -7,22 +7,48 @@ header {
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-
 nav {
     max-width: 1400px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-nav ul {
+/* Logo and hamburger always sit on one line */
+.nav-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.hamburger {
+    all: unset;
+    cursor: pointer;
+    color: var(--cream);
+    font-size: 1.5rem;
+    display: none;          /* hidden on desktop */
+}
+
+/* Nav links — row on desktop */
+.nav-links {
     display: flex;
     list-style: none;
     gap: 2.5rem;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
 }
 
-nav a {
+.nav-links a {
     color: var(--cream);
     text-decoration: none;
     font-size: 0.95rem;
@@ -31,7 +57,7 @@ nav a {
     position: relative;
 }
 
-nav a::after {
+.nav-links a::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -42,43 +68,24 @@ nav a::after {
     transition: width 0.3s ease;
 }
 
-nav a:hover::after {
+.nav-links a:hover::after {
     width: 100%;
 }
 
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--cream);
-    letter-spacing: -0.5px;
-
-}
-.logo::after { display: none !important; }
-
-@media (min-width: 768px) {
-    nav ul {
-        display: flex;
-    }
-
-}
+/* Mobile */
 @media (max-width: 768px) {
-    nav {
-        display: flex;
-        flex-direction: row;   /* Stack items vertically */
-        align-items: center;      /* Center everything horizontally */
-        gap: 1rem;
+    .hamburger {
+        display: inline-block;  /* show on mobile */
     }
-    nav section {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex: 1;
-    }
-    nav ul {
+
+    .nav-links {
+        display: none;          /* collapsed by default */
         flex-direction: column;
         gap: 1.5rem;
-        display: none;
+        padding-top: 1rem;
+    }
+
+    .nav-links.open {
+        display: flex;          /* expanded when toggled */
     }
 }
