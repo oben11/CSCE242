@@ -76,105 +76,6 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* ===================================
-   HERO SECTIONS
-   =================================== */
-
-.hero {
-    background: linear-gradient(165deg, var(--coffee-dark) 0%, var(--espresso) 50%, #1a0f0a 100%);
-    color: var(--cream);
-    padding: 8rem 2rem 6rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 80%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
-    animation: float 20s infinite ease-in-out;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    50% { transform: translate(-50px, 50px) rotate(5deg); }
-}
-
-.hero-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -2px;
-}
-
-.hero.animate h1 {
-    animation: fadeInUp 1s ease-out;
-}
-
-.splash_0 {
-    background-image: url('./media/splash_0.jpg');
-}
-.splash_1 {
-    background-image: url('./media/splash_1.jpg');
-}
-.splash_2 {
-    background-image: url('./media/splash_2.jpg');
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.95;
-}
-.hero.animate p {
-    animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-/* Hero Variants */
-.hero.hero-simple {
-    background: linear-gradient(135deg, var(--coffee-dark), var(--espresso));
-    padding: 5rem 2rem;
-    text-align: center;
-}
-
-.hero.hero-simple h1 {
-    font-size: 3.5rem;
-    animation: none;
-}
-
-.hero.hero-simple p {
-    animation: none;
-}
-
-.hero.hero-accent {
-    background: linear-gradient(135deg, var(--latte) 0%, var(--accent) 100%);
-    color: var(--espresso);
-}
 
 /* ===================================
    BUTTONS & CTAs
@@ -294,7 +195,6 @@ h1 {
    =================================== */
 
 .feature-card,
-.benefit-card,
 .value-card {
     background: white;
     padding: 2.5rem;
@@ -910,39 +810,7 @@ h1 {
 
 
 
-/* ===================================
-   MERCHANDISE PAGE - WHY SHOP
-   =================================== */
 
-.why-shop {
-    background: white;
-    padding: 4rem 2rem;
-}
-
-.why-shop-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.benefit-item {
-    text-align: center;
-}
-
-.benefit-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.benefit-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    color: var(--espresso);
-}
-
-.benefit-item p {
-    color: var(--coffee-dark);
-}
 
 /* ===================================
    MENU PAGE - MENU ITEMS
@@ -1175,13 +1043,7 @@ footer {
     }
 
     
-    .hero {
-        padding: 5rem 1.5rem 4rem;
-    }
-    
-    .hero.hero-simple h1 {
-        font-size: 2.5rem;
-    }
+
     
     .cta-buttons {
         flex-direction: column;

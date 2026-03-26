@@ -1,4 +1,4 @@
-
+import "../../css/merchandise/WhyShop.css"
 import BenefitsGrid from "./BenefitsGrid.jsx"
 
 const DEFAULT_BENEFITS = [

@@ -1,4 +1,6 @@
 import BenefitItem from "./BenefitItem";
+import "../../css/merchandise/BenefitGrid.css"
+
 
 const BenefitsGrid = ({ benefits }) => (
   <div className="benefits-grid">

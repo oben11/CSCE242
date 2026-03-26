@@ -1,0 +1,11 @@
+.feature-card,
+.benefit-card,
+.value-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}

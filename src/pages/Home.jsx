@@ -1,7 +1,7 @@
 import "../css/Home.css";
 import Features from "../componets/home/Features";
 import SignatureRoast from "../componets/home/SignatureRoast";
-
+import Hero from "../componets/Hero"
 
 
 const Home = () => {
@@ -9,16 +9,16 @@ const Home = () => {
 
         <main id="home" className="main-content">
 
-            <section class="hero animate splash_1">
-                <div class="hero-content">
-                    <h1>Welcome to Ollie's Coffee Company</h1>
-                    <p>Crafting the perfect cup since 1987. Experience the rich tradition of expertly roasted coffee.</p>
-                    <div class="cta-buttons">
-                        <a href="menu.html" class="btn btn-primary btn-dark">Order Now</a>
-                        <a href="rewards.html" class="btn btn-primary">Join Rewards</a>
-                    </div>
-                </div>
-            </section>
+        <Hero
+        title="Welcome to Ollie's Coffee Company"
+        description="Crafting the perfect cup since 1987."
+        backgroundImage="./media/home_splash.jpg"
+        animate={true}
+        buttons={[
+            { label: "Order Now", href: "menu.html", style: "primary-dark" },
+            { label: "Join Rewards", href: "rewards.html", style: "primary" },
+        ]}
+        />
             <Features />
             <SignatureRoast />
         </main>

@@ -9,19 +9,12 @@ export default function Rewards() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500;600&display=swap" rel="stylesheet"></link>
 
-            <section className="hero">
-                <div className="hero-content">
-                    <h1>Ollie's Rewards Program</h1>
-                    <p>
-                        Join our rewards program and start earning stars with every purchase.
-                        <br />
-                        Unlock exclusive benefits and free drinks!
-                    </p>
-                    <Link to="#" className="btn btn-primary">
-                        Join Now - It's Free!
-                    </Link>
-                </div>
-            </section>
+        <Hero
+        title="Ollie's Rewards Program"
+        description="Join our rewards program and start earning stars..."
+        buttons={[{ label: "Join Now - It's Free!", to: "#", style: "primary" }]}
+        />
+
 
             <section className="how-it-works">
                 <h2 className="section-title">How It Works</h2>
