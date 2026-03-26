@@ -3,6 +3,8 @@ import Header from "./componets/Header";
 import Navigation from "./componets/Navigation";
 import Footer from "./componets/Footer"
 import "./index.css";
+import "./Layout.css"
+
 
 const Layout = () => {
     return (
