@@ -1,0 +1,52 @@
+/* StarRedemption.css */
+
+.redemption {
+    background: linear-gradient(135deg, var(--latte), var(--coffee-dark));
+    color: var(--cream);
+    padding: 5rem 2rem;
+    margin-bottom: 5rem;
+}
+
+.redemption-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.redemption .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--cream);
+}
+
+.redemption-list {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 3rem;
+    margin-top: 3rem;
+    backdrop-filter: blur(10px);
+}
+
+.redemption-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(245, 241, 232, 0.2);
+}
+
+.redemption-item:last-child {
+    border-bottom: none;
+}
+
+.redemption-item span:first-child {
+    font-size: 1.1rem;
+}
+
+.redemption-item span:last-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--latte);
+}

@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Route, Routes} from "react-router-dom"; // for github pages
 import './index.css';
 import Layout from './Layout';
-import Home from './pages/Home';
-import About from "./pages/About";
-import Menu from "./pages/Menu";
-import Rewards from "./pages/Rewards";
-import Merchandise from "./pages/Merchandise";
+import Home from './pages/Home/Home';
+import About from "./pages/About/About";
+import Menu from "./pages/Menu/Menu";
+import Rewards from "./pages/Rewards/Rewards";
+import Merchandise from "./pages/Merchandise/Merchandise";
 
 
 const App = () => {

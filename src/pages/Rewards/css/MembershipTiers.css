@@ -1,0 +1,87 @@
+/* MembershipTiers.css */
+
+.tiers {
+    padding: 5rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tiers .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--espresso);
+}
+
+.tier-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tier-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
+    border-top: 5px solid;
+    transition: all 0.3s ease;
+}
+
+.tier-card.bronze {
+    border-top-color: var(--bronze);
+}
+
+.tier-card.silver {
+    border-top-color: var(--silver);
+}
+
+.tier-card.gold {
+    border-top-color: var(--gold);
+    position: relative;
+    overflow: hidden;
+}
+
+.tier-card.gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), transparent);
+    pointer-events: none;
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(44, 24, 16, 0.15);
+}
+
+.tier-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.tier-card ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.tier-card li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(44, 24, 16, 0.1);
+}
+
+.tier-card li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .tier-cards {
+        grid-template-columns: 1fr;
+    }
+}

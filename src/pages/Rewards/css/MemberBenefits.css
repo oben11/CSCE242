@@ -1,0 +1,47 @@
+/* MemberBenefits.css */
+
+.benefits {
+    background: white;
+    padding: 5rem 2rem;
+}
+
+.benefits .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--espresso);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.benefit-card {
+    padding: 2.5rem;
+    background: var(--cream);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--latte);
+    box-shadow: 0 10px 30px rgba(44, 24, 16, 0.1);
+}
+
+.benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--espresso);
+}
+
+.benefit-card p {
+    color: var(--coffee-dark);
+    font-size: 1.05rem;
+}
