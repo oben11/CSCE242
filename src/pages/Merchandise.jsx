@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Hero from "../componets/Hero";
+import FilterSection from "../componets/FilterSection";
+import ProductGrid from "../componets/merchandise/ProductGrid";
 
 
 
@@ -13,22 +15,7 @@ export default function Merchandise() {
     <script src="../scripts/merchandiseLoader.js" defer></script>
 
       <Hero title="Official Merchandise" description="Show your love for Ollie's with our exclusive branded products" />
-
-      <section className="filter-section">
-        <div className="filter-container">
-          <button className="filter-btn active">All</button>
-          <button className="filter-btn">Drinkware</button>
-          <button className="filter-btn">Bags</button>
-          <button className="filter-btn">Coffee</button>
-          <button className="filter-btn">Apparel</button>
-          <button className="filter-btn">Accessories</button>
-          <button className="filter-btn">Gift Cards</button>
-        </div>
-      </section>
-
-      <section className="products">
-        <div className="products-grid"></div>
-      </section>
+    <ProductGrid></ProductGrid>
 
       <section className="why-shop">
         <div className="why-shop-content">

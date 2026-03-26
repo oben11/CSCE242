@@ -34,23 +34,6 @@ body {
    =================================== */
 
 
-header {
-    background: linear-gradient(135deg, var(--espresso) 0%, var(--coffee-dark) 100%);
-    padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-nav {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 
 
 .logo {
@@ -925,211 +908,7 @@ h1 {
     margin-top: 1rem;
 }
 
-/* ===================================
-   MERCHANDISE PAGE - PRODUCTS
-   =================================== */
 
-.products {
-    padding: 4rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2.5rem;
-}
-
-.product-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(44, 24, 16, 0.08);
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(44, 24, 16, 0.15);
-}
-
-.product-image {
-    background: var(--cream);
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 5rem;
-    position: relative;
-    overflow: hidden;
-}
-
-.product-image::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(193, 124, 74, 0.1));
-}
-
-.product-image img {
-    width: 150%;
-}
-
-.category-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: var(--espresso);
-    color: var(--cream);
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.product-info {
-    padding: 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.product-info h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--espresso);
-}
-
-.product-info p {
-    color: var(--coffee-dark);
-    margin-bottom: 1rem;
-    flex: 1;
-}
-
-.color-options,
-.size-options {
-    margin-bottom: 1rem;
-}
-
-.options-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    display: block;
-    color: var(--coffee-dark);
-}
-
-.color-dots {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.color-dot {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 2px solid var(--cream);
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.color-dot:hover {
-    transform: scale(1.2);
-    border-color: var(--latte);
-}
-
-.color-dot.white {
-    background: #ffffff;
-    border-color: var(--latte);
-}
-
-.color-dot.black {
-    background: #000000;
-}
-
-.color-dot.brown {
-    background: var(--coffee-dark);
-}
-
-.color-dot.silver {
-    background: #C0C0C0;
-}
-
-.color-dot.rose-gold {
-    background: #B76E79;
-}
-
-.color-dot.natural {
-    background: #D4C5B0;
-}
-
-.color-dot.cream {
-    background: var(--cream);
-    border-color: var(--latte);
-}
-
-.color-dot.navy {
-    background: #1B2A49;
-}
-
-.size-buttons {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-}
-
-.size-btn {
-    padding: 0.4rem 0.8rem;
-    background: var(--cream);
-    border: 1px solid var(--latte);
-    color: var(--espresso);
-    font-family: 'Lora', serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.size-btn:hover {
-    background: var(--latte);
-}
-
-.product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: auto;
-}
-
-.price {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--accent);
-}
-
-.add-btn {
-    padding: 0.8rem 1.5rem;
-    background: var(--espresso);
-    color: var(--cream);
-    border: none;
-    border-radius: 50px;
-    font-family: 'Lora', serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.add-btn:hover {
-    background: var(--coffee-dark);
-    transform: scale(1.05);
-}
 
 /* ===================================
    MERCHANDISE PAGE - WHY SHOP
@@ -1345,14 +1124,7 @@ footer {
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
-.hamburger {
-        all:unset;
-        cursor: pointer; 
-        color: var(--cream);
-        font-size: 1.5rem;
-        display: none;
 
-}
 
 /* ===================================
    RESPONSIVE DESIGN
@@ -1401,25 +1173,7 @@ footer {
         z-index: 100;
         box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     }
-    nav {
-        display: flex;
-        flex-direction: row;   /* Stack items vertically */
-        align-items: center;      /* Center everything horizontally */
-        gap: 1rem;
-    }
 
-    .logo {
-        text-align: right;
-        align-self: flex-end;
-        justify-self: flex-start;
-    }
-    nav section {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex: 1;
-    }
     
     .hero {
         padding: 5rem 1.5rem 4rem;
@@ -1433,14 +1187,6 @@ footer {
         flex-direction: column;
     }
     
-    nav ul {
-        flex-direction: column;
-        gap: 1.5rem;
-        display: none;
-    }
-    .hamburger {
-        display: block;
-    }
 
     
     .signature-image {

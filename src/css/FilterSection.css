@@ -1,0 +1,36 @@
+.filter-section {
+    padding: 2rem;
+    background: white;
+    border-bottom: 2px solid var(--cream);
+    top: 72px;
+    z-index: 50;
+}
+
+.filter-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.7rem 1.5rem;
+    background: var(--cream);
+    border: 2px solid var(--latte);
+    color: var(--espresso);
+    font-family: 'Lora', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--latte);
+    color: var(--espresso);
+    transform: translateY(-2px);
+}
