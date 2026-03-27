@@ -1,0 +1,109 @@
+{
+  "presets": {
+    "mocha": {
+      "name": "Mocha",
+      "emoji": "🍫",
+      "description": "Espresso, steamed milk & chocolate",
+      "baseShots": 2,
+      "defaultMilk": "whole",
+      "defaultTemp": "hot",
+      "accent": "#C97B4B",
+      "cupColor": "#5C2D0A",
+      "liquidBase": "#3B1500",
+      "foamColor": "#E8CFA0",
+      "milkColor": "#D4A96A"
+    },
+    "latte": {
+      "name": "Latte",
+      "emoji": "🥛",
+      "description": "Espresso & lots of steamed milk",
+      "baseShots": 2,
+      "defaultMilk": "oat",
+      "defaultTemp": "hot",
+      "accent": "#D4A96A",
+      "cupColor": "#8B5E3C",
+      "liquidBase": "#6B3A1A",
+      "foamColor": "#F5E6C8",
+      "milkColor": "#E8CFA0"
+    },
+    "cappuccino": {
+      "name": "Cappuccino",
+      "emoji": "☕",
+      "description": "Espresso, steamed & foamed milk",
+      "baseShots": 2,
+      "defaultMilk": "whole",
+      "defaultTemp": "hot",
+      "accent": "#C9853A",
+      "cupColor": "#7A4A28",
+      "liquidBase": "#4A2008",
+      "foamColor": "#F0D8A8",
+      "milkColor": "#D8B880"
+    },
+    "macchiato": {
+      "name": "Macchiato",
+      "emoji": "✨",
+      "description": "Espresso marked with a dash of milk",
+      "baseShots": 2,
+      "defaultMilk": "whole",
+      "defaultTemp": "hot",
+      "accent": "#B87333",
+      "cupColor": "#5C3317",
+      "liquidBase": "#2C1000",
+      "foamColor": "#E0C090",
+      "milkColor": "#C8A070"
+    },
+    "americano": {
+      "name": "Americano",
+      "emoji": "💧",
+      "description": "Espresso & hot water",
+      "baseShots": 2,
+      "defaultMilk": "none",
+      "defaultTemp": "hot",
+      "accent": "#7B4F2E",
+      "cupColor": "#2C1A0E",
+      "liquidBase": "#1A0800",
+      "foamColor": "#8B6040",
+      "milkColor": "#8B6040"
+    }
+  },
+  "sizes": [
+    { "id": "short", "label": "Short", "oz": 8 },
+    { "id": "tall", "label": "Tall", "oz": 12 },
+    { "id": "grande", "label": "Grande", "oz": 16 },
+    { "id": "venti", "label": "Venti", "oz": 20 }
+  ],
+  "milks": [
+    { "id": "none", "label": "No Milk" },
+    { "id": "whole", "label": "Whole" },
+    { "id": "skim", "label": "Skim" },
+    { "id": "oat", "label": "Oat" },
+    { "id": "almond", "label": "Almond" },
+    { "id": "soy", "label": "Soy" },
+    { "id": "coconut", "label": "Coconut" }
+  ],
+  "syrups": [
+    { "id": "vanilla", "label": "Vanilla" },
+    { "id": "caramel", "label": "Caramel" },
+    { "id": "hazelnut", "label": "Hazelnut" },
+    { "id": "lavender", "label": "Lavender" },
+    { "id": "cinnamon", "label": "Cinnamon Dolce" },
+    { "id": "toffee", "label": "Toffee Nut" },
+    { "id": "raspberry", "label": "Raspberry" },
+    { "id": "peppermint", "label": "Peppermint" }
+  ],
+  "extras": [
+    { "id": "extra_foam", "label": "Extra Foam" },
+    { "id": "no_foam", "label": "No Foam" },
+    { "id": "light_ice", "label": "Light Ice" },
+    { "id": "extra_ice", "label": "Extra Ice" },
+    { "id": "whip", "label": "Whipped Cream" },
+    { "id": "no_whip", "label": "No Whipped Cream" },
+    { "id": "dry", "label": "Dry" },
+    { "id": "wet", "label": "Wet" }
+  ],
+  "temps": [
+    { "id": "hot", "label": "Hot", "icon": "♨" },
+    { "id": "iced", "label": "Iced", "icon": "❄" },
+    { "id": "blended", "label": "Blended", "icon": "◎" }
+  ]
+}

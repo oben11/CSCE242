@@ -1,0 +1,113 @@
+.locations {
+  background: linear-gradient(135deg, #1a0f0a 0%, var(--espresso) 50%, var(--coffee-dark) 100%);
+  color: var(--cream);
+  padding: 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  min-height: 500px;
+}
+
+/* Left side */
+.location-content {
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+.location-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.location-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.95;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+/* Right side deck */
+.location-cards {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-card {
+  position: absolute;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, z-index 0.3s ease, background 0.3s ease;
+  z-index: var(--card-index);
+  transform: translateY(calc(var(--card-index) * 18px))
+             translateX(calc(var(--card-index) * -14px));
+}
+
+.location-card:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.location-card:nth-child(2) {
+  top: 18px;
+  left: 100px;
+}
+
+.location-card:nth-child(3) {
+  top: 36px;
+  left: 200px;
+}
+
+/* Dim everything when hovering container */
+.location-cards:hover .location-card {
+  opacity: 0.1;
+  filter: blur(1px);
+}
+
+/* Bring focus to hovered card */
+.location-cards .location-card:hover {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(calc(var(--card-index) * 18px - 10px))
+             translateX(calc(var(--card-index) * -14px))
+             scale(1.04);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.location-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin: 1rem 0 0.75rem;
+  color: var(--latte);
+}
+
+.location-card p {
+  margin-bottom: 0.5rem;
+  opacity: 0.95;
+}
+
+.location-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}

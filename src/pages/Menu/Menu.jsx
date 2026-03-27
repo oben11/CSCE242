@@ -1,5 +1,7 @@
 import React from "react";
 import Hero from "../../componets/Hero";
+import Builder from "./componets/Builder"
+
 
 const Menu = () => {
   return (
@@ -12,20 +14,7 @@ const Menu = () => {
 
 
      <Hero title="Our Menu" description="Handcrafted beverages made with premium ingredients" />
-
-      <section className="filter-section">
-        <div className="filter-container">
-          <button className="filter-btn active">All</button>
-          <button className="filter-btn">Hot Coffee</button>
-          <button className="filter-btn">Espresso</button>
-          <button className="filter-btn">Cold Beverages</button>
-          <button className="filter-btn">Tea &amp; Other</button>
-        </div>
-      </section>
-
-      <section className="menu">
-        <div className="menu-grid"></div>
-      </section>
+      <Builder></Builder>
     </>
   );
 };

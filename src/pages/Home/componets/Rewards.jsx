@@ -1,0 +1,57 @@
+import { useEffect } from "react";
+import confetti from "canvas-confetti";
+import rewardspic from "../data/rewards.png";
+import "../css/Rewards.css";
+
+const Rewards = () => {
+  const shoot = () => {
+    const defaults = {
+
+      spread: 360,
+      ticks: 50,
+      gravity: 0,
+      decay: 0.94,
+      startVelocity: 30,
+      colors: ["#FFE400", "#FFBD00", "#E89400", "#FFCA6C", "#FDFFB8"],
+    };
+
+    confetti({
+      ...defaults,
+      particleCount: 40,
+      scalar: 1.2,
+      shapes: ["star"],
+    });
+
+    confetti({
+      ...defaults,
+      particleCount: 10,
+      scalar: 0.75,
+      shapes: ["circle"],
+    });
+  };
+
+  return (
+    <section className="rewards">
+
+    
+      <div className="rewards-image">
+        <img
+          onClick={shoot}
+          src={rewardspic}
+          alt="Latte art coffee"
+        />
+      </div>
+      <div className="rewards-content">
+        <h2>Rewards</h2>
+        <p>
+          Sign up for our rewards program and earn stars!
+          Explore our membership tiers for exclusive deals and merch
+        </p>
+        <a href="menu.html" className="btn btn-primary">Sign up now!</a>
+      </div>
+
+    </section>
+  );
+};
+
+export default Rewards;

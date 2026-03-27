@@ -1,0 +1,61 @@
+/* ===================================
+   rewards SECTION (Homepage)
+   =================================== */
+
+.rewards {
+    background: linear-gradient(135deg, #1a0f0a 0%, var(--espresso) 50%, var(--coffee-dark) 100%);
+    color: var(--cream);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.rewards::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 60%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
+}
+
+.rewards-content {
+    max-width: 900px;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    flex:2;
+}
+.rewards-image {
+    margin-right: 100px;
+    margin-left: 30px;
+    position: relative;
+    z-index: 2;
+    flex:1;
+    overflow:hidden
+}
+.rewards img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.rewards h2 {
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.rewards p {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}

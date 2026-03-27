@@ -1,3 +1,6 @@
+import "../css/SignatureRoast.css";
+import {Link} from 'react-router-dom';
+
 const SignatureRoast = () => {
     return (
         <section className="signature">
@@ -8,7 +11,7 @@ const SignatureRoast = () => {
                     rich flavor with notes of chocolate and caramel. Each batch is roasted to
                     perfection by our master roasters.
                 </p>
-                <a href="menu.html" className="btn btn-primary">Explore Menu</a>
+                <Link href="/menu" className="btn btn-primary">Explore Menu</Link>
             </div>
             <div className="signature-image">
                 <img

@@ -1,6 +1,8 @@
 import Features from "./componets/Features";
 import SignatureRoast from "./componets/SignatureRoast";
 import Hero from "../../componets/Hero"
+import Slideshow from "./componets/Slideshow"
+
 import home_splash from "./data/home_splash.jpg"
 
 const Home = () => {
@@ -19,7 +21,8 @@ const Home = () => {
         ]}
         />
             <Features />
-            <SignatureRoast />
+                    <Slideshow />
+
         </main>
     );
 };
