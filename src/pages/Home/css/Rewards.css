@@ -5,24 +5,16 @@
 .rewards {
     background: linear-gradient(135deg, #1a0f0a 0%, var(--espresso) 50%, var(--coffee-dark) 100%);
     color: var(--cream);
-    padding: 6rem 2rem;
+    padding: 2rem;
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5rem;
+
 }
 
-.rewards::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -10%;
-    width: 60%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
-}
+
 
 .rewards-content {
     max-width: 900px;

@@ -32,8 +32,6 @@ const Rewards = () => {
 
   return (
     <section className="rewards">
-
-    
       <div className="rewards-image">
         <img
           onClick={shoot}

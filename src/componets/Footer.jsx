@@ -21,6 +21,7 @@ const Footer = () => {
             </div>
             <div class="footer-section">
                 <h4>Connect</h4>
+                <li><Link to="/contact">Contact us</Link></li>
                 <p>Follow us on social media</p>
                 <p>Email: hello@olliescoffee.com</p>
                 <p>Phone: (555) BREW-123</p>

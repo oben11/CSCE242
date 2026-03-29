@@ -1,17 +1,19 @@
-.locations {
-  background: linear-gradient(135deg, #1a0f0a 0%, var(--espresso) 50%, var(--coffee-dark) 100%);
+.locations-home {
+  background: linear-gradient(135deg, #000000 0%, var(--espresso) 50%, var(--coffee-dark) 100%);
   color: var(--cream);
-  padding: 2rem 2rem;
   position: relative;
+  padding-left: 10rem;
+  padding-top: 2rem;
   overflow: hidden;
   display: flex;
   align-items: center;
   gap: 2rem;
   min-height: 500px;
+  padding-bottom: 10rem;
 }
 
 /* Left side */
-.location-content {
+.location-content-home {
   flex: 1;
   max-width: 500px;
   position: relative;
@@ -19,24 +21,22 @@
   text-align: left;
 }
 
-.location-content h2 {
+.location-content-home h2 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  margin-bottom: 1.5rem;
   font-weight: 700;
   text-align: left;
 }
 
-.location-content p {
+.location-content-home p {
   font-size: 1.2rem;
   line-height: 1.8;
   opacity: 0.95;
   text-align: left;
-  margin-bottom: 0;
 }
 
 /* Right side deck */
-.location-cards {
+.location-cards-home {
   flex: 1;
   position: relative;
   width: 100%;
@@ -47,7 +47,7 @@
   align-items: center;
 }
 
-.location-card {
+.location-card-home {
   position: absolute;
   width: 100%;
   background: rgba(255, 255, 255, 0.08);
@@ -61,29 +61,29 @@
              translateX(calc(var(--card-index) * -14px));
 }
 
-.location-card:nth-child(1) {
+.location-card-home:nth-child(1) {
   top: 0;
   left: 0;
 }
 
-.location-card:nth-child(2) {
+.location-card-home:nth-child(2) {
   top: 18px;
   left: 100px;
 }
 
-.location-card:nth-child(3) {
+.location-card-home:nth-child(3) {
   top: 36px;
   left: 200px;
 }
 
 /* Dim everything when hovering container */
-.location-cards:hover .location-card {
+.location-cards-home:hover .location-card-home {
   opacity: 0.1;
   filter: blur(1px);
 }
 
 /* Bring focus to hovered card */
-.location-cards .location-card:hover {
+.location-cards-home .location-card-home:hover {
   opacity: 1;
   filter: blur(0);
   transform: translateY(calc(var(--card-index) * 18px - 10px))
@@ -92,19 +92,19 @@
   background: rgba(255, 255, 255, 0.16);
 }
 
-.location-card h3 {
+.location-card-home h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   margin: 1rem 0 0.75rem;
   color: var(--latte);
 }
 
-.location-card p {
+.location-card-home p {
   margin-bottom: 0.5rem;
   opacity: 0.95;
 }
 
-.location-img {
+.location-img-home {
   width: 100%;
   height: 180px;
   object-fit: cover;

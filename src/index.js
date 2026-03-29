@@ -8,6 +8,8 @@ import About from "./pages/About/About";
 import Menu from "./pages/Menu/Menu";
 import Rewards from "./pages/Rewards/Rewards";
 import Merchandise from "./pages/Merchandise/Merchandise";
+import Contact from "./pages/Contact/Contact";
+
 
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
           <Route path="menu" element={<Menu />} />
           <Route path="rewards" element={<Rewards />} />
           <Route path="merchandise" element={<Merchandise />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>
