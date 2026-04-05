@@ -1,9 +1,30 @@
 import "../css/OurLocations.css";
-import locations from "./Locations.json"
-import React from "react";
-
+import React, { useState, useEffect } from "react";
 
 const OurLocations = () => {
+    const [locations, setLocations] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        fetch("https://csce242-rxy6.onrender.com/api/locations")
+            .then((res) => {
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                return res.json();
+            })
+            .then((data) => {
+                setLocations(data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                setError(err.message);
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) return <p>Loading locations...</p>;
+    if (error) return <p>Error: {error}</p>;
+
     return (
         <section className="locations">
             <h2 className="section-title" style={{ textAlign: "center", color: "var(--cream)" }}>
