@@ -11,7 +11,9 @@ const OurLocations = () => {
     const API_URL = "https://csce242-rxy6.onrender.com/api/locations";
 
     const uploadImage = (e) => {
-        setPrevSrc(URL.createObjectURL(e.target.files[0]));
+        if (e.target.files[0]) {
+            setPrevSrc(URL.createObjectURL(e.target.files[0]));
+        }
     };
 
     const addLocationToServer = async (e) => {
@@ -24,14 +26,16 @@ const OurLocations = () => {
                 body: new FormData(e.target),
             });
 
-            if (response.status === 200) {
+            if (response.ok) {
                 const newLocation = await response.json();
-                setResult("Location Added");
+                setResult("Location Added!");
                 setLocations((prev) => [...prev, newLocation]);
                 e.target.reset();
                 setPrevSrc("");
+                setTimeout(() => setResult(""), 3000);
             } else {
-                setResult("Error adding location");
+                const errText = await response.text();
+                setResult(`Error: ${errText}`);
             }
         } catch (err) {
             setResult("Error adding location");
@@ -69,7 +73,7 @@ const OurLocations = () => {
                 {locations.map((loc) => (
                     <div className="location-card" key={loc.id}>
                         <img
-                            src={API_URL + "/" + loc.id + "/image"}
+                            src={`${API_URL}/${loc.id}/image`}
                             alt={loc.alt}
                             className="location-img"
                         />
@@ -79,20 +83,78 @@ const OurLocations = () => {
                         <p>{loc.phone}</p>
                     </div>
                 ))}
+
                 <form className="location-card location-form" onSubmit={addLocationToServer}>
+                    {/* Image upload — required, images only */}
                     <label className="file-upload" htmlFor="file-input">
-                        <input type="file" id="file-input" name="image" accept="image/*" onChange={uploadImage} />
+                        <input
+                            type="file"
+                            id="file-input"
+                            name="image"
+                            accept="image/*"
+                            required
+                            onChange={uploadImage}
+                        />
                         <div className="location-img">
-                            <img src={prevSrc} alt="New Location Preview" className="location-img" />
+                            {prevSrc && (
+                                <img src={prevSrc} alt="New Location Preview" className="location-img" />
+                            )}
                         </div>
                     </label>
-                    <input type="text" name="alt" placeholder="Image description" required />
-                    <input type="text" name="name" placeholder="Name" required />
-                    <input type="text" name="address" placeholder="Address" required />
-                    <input type="text" name="hours" placeholder="Hours" required />
-                    <input type="text" name="phone" placeholder="Phone" required />
-                    <button type="submit" className="post-badge">
-                        {result || "Post"}
+
+                    {/* Image alt text — min 3 chars, matches Joi schema */}
+                    <input
+                        type="text"
+                        name="alt"
+                        placeholder="Image description"
+                        required
+                        minLength={3}
+                        maxLength={120}
+                    />
+
+                    {/* Name — min 3 chars */}
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Location name"
+                        required
+                        minLength={3}
+                        maxLength={80}
+                    />
+
+                    {/* Address — min 3 chars */}
+                    <input
+                        type="text"
+                        name="address"
+                        placeholder="Address"
+                        required
+                        minLength={3}
+                        maxLength={120}
+                    />
+
+                    {/* Hours — min 3 chars */}
+                    <input
+                        type="text"
+                        name="hours"
+                        placeholder="Hours"
+                        required
+                        minLength={3}
+                        maxLength={80}
+                    />
+
+                    {/* Phone — min 7 digits, pattern enforces digit/dash/paren/space/+ format */}
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone Number"
+                        required
+                        minLength={7}
+                        maxLength={20}
+                        title="phone number"
+                    />
+
+                    <button type="submit" className="post-badge" disabled={result === "Sending..."}>
+                        {result || "Add Location"}
                     </button>
                 </form>
             </div>
