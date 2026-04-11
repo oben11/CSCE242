@@ -52,6 +52,7 @@
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1rem;
+    background-color: gray;
 }
 
 .location-card h3 {
@@ -65,3 +66,90 @@
     margin-bottom: 0.5rem;
     opacity: 0.95;
 }
+
+
+
+
+
+/* ===================================
+   Location Form Styling (Matches Cards)
+   =================================== */
+
+/* Stack inputs like your text content */
+.location-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem; /* matches spacing between <p> elements */
+}
+
+/* Base input style — mimic paragraph text */
+.location-card input {
+  width: 100%;
+  background: transparent;        /* blend into card */
+  border: none;                  /* remove default borders */
+  color: var(--cream);           /* same as card text */
+  font-family: inherit;          /* match card font */
+  font-size: 1rem;
+  padding: 0.2rem 0;             /* tighter like <p> */
+  outline: none;
+  opacity: 0.95;                 /* match paragraph opacity */
+}
+
+/* Placeholder text — slightly muted */
+.location-card input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Remove number input spinner arrows (cleaner UI) */
+.location-card input[type="number"]::-webkit-inner-spin-button,
+.location-card input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Target the "name" input specifically */
+.location-card input[name="name"] {
+  font-family: 'Playfair Display', serif; /* match heading */
+  font-weight: 600;
+  font-size: 1.5rem;                     /* same as h3 */
+  color: var(--latte);                   /* same color as h3 */
+  margin-bottom: 0.4rem;                 /* spacing like heading */
+}
+
+.location-card input[name="name"]::placeholder {
+                   /* spacing like heading */
+                     color: rgb(174, 146, 102);  
+
+}
+
+#file-input {
+display: none;
+}
+
+
+
+
+
+
+.post-badge {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #22c55e;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  font: 600 14px/1.2 Arial, sans-serif;
+  text-transform: lowercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  border:none;
+}
+
+.post-badge:hover {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+

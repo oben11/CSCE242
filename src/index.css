@@ -3,16 +3,7 @@
    =================================== */
 
 /* CSS Variables */
-:root {
-    --espresso: #2C1810;
-    --coffee-dark: #4A3428;
-    --latte: #D4A574;
-    --cream: #F5F1E8;
-    --accent: #C17C4A;
-    --bronze: #CD7F32;
-    --silver: #C0C0C0;
-    --gold: #FFD700;
-}
+
 
 /* Reset & Base Styles */
 * {

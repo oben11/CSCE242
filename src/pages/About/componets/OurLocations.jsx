@@ -5,21 +5,53 @@ const OurLocations = () => {
     const [locations, setLocations] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [result, setResult] = useState("");
+    const [prevSrc, setPrevSrc] = useState("");
+
+    const API_URL = "https://csce242-rxy6.onrender.com/api/locations";
+
+    const uploadImage = (e) => {
+        setPrevSrc(URL.createObjectURL(e.target.files[0]));
+    };
+
+    const addLocationToServer = async (e) => {
+        e.preventDefault();
+        setResult("Sending...");
+
+        try {
+            const response = await fetch(API_URL, {
+                method: "POST",
+                body: new FormData(e.target),
+            });
+
+            if (response.status === 200) {
+                const newLocation = await response.json();
+                setResult("Location Added");
+                setLocations((prev) => [...prev, newLocation]);
+                e.target.reset();
+                setPrevSrc("");
+            } else {
+                setResult("Error adding location");
+            }
+        } catch (err) {
+            setResult("Error adding location");
+            console.error(err);
+        }
+    };
 
     useEffect(() => {
-        fetch("https://csce242-rxy6.onrender.com/api/locations")
-            .then((res) => {
-                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-                return res.json();
-            })
-            .then((data) => {
+        const loadLocations = async () => {
+            try {
+                const response = await fetch(API_URL);
+                const data = await response.json();
                 setLocations(data);
-                setLoading(false);
-            })
-            .catch((err) => {
+            } catch (err) {
                 setError(err.message);
+            } finally {
                 setLoading(false);
-            });
+            }
+        };
+        loadLocations();
     }, []);
 
     if (loading) return <p>Loading locations...</p>;
@@ -35,9 +67,9 @@ const OurLocations = () => {
             </p>
             <div className="locations-grid">
                 {locations.map((loc) => (
-                    <div className="location-card" key={loc.seed}>
+                    <div className="location-card" key={loc.id}>
                         <img
-                            src={`https://picsum.photos/seed/${loc.seed}/600/400`}
+                            src={API_URL + "/" + loc.id + "/image"}
                             alt={loc.alt}
                             className="location-img"
                         />
@@ -47,6 +79,22 @@ const OurLocations = () => {
                         <p>{loc.phone}</p>
                     </div>
                 ))}
+                <form className="location-card location-form" onSubmit={addLocationToServer}>
+                    <label className="file-upload" htmlFor="file-input">
+                        <input type="file" id="file-input" name="image" accept="image/*" onChange={uploadImage} />
+                        <div className="location-img">
+                            <img src={prevSrc} alt="New Location Preview" className="location-img" />
+                        </div>
+                    </label>
+                    <input type="text" name="alt" placeholder="Image description" required />
+                    <input type="text" name="name" placeholder="Name" required />
+                    <input type="text" name="address" placeholder="Address" required />
+                    <input type="text" name="hours" placeholder="Hours" required />
+                    <input type="text" name="phone" placeholder="Phone" required />
+                    <button type="submit" className="post-badge">
+                        {result || "Post"}
+                    </button>
+                </form>
             </div>
         </section>
     );

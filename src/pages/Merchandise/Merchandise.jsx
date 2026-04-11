@@ -4,6 +4,7 @@ import ProductGrid from "./componets/ProductGrid";
 import WhyShop from "./componets/WhyShop";
 
 
+
 export default function Merchandise() {
   return (
     <>
