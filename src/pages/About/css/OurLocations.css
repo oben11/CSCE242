@@ -68,6 +68,12 @@
 }
 
 
+.locations-footer {
+  height: 50px;
+  background: none;
+}
+
+
 
 
 
@@ -150,6 +156,49 @@ display: none;
 
 .post-badge:hover {
   background: #16a34a;
+  transform: translateY(-1px);
+}
+
+
+.delete-badge {
+  position: fixed;
+  right: 90px;
+  bottom: 20px;
+  background: #c52222;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  font: 600 14px/1.2 Arial, sans-serif;
+  text-transform: lowercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  border:none;
+}
+
+.delete-badge:hover {
+  background: #a31616;
+  transform: translateY(-1px);
+}
+
+.actions-badge {
+  position: fixed;
+  right: 90px;
+  bottom: 20px;
+  background: #c58722;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 9999px;
+  font: 600 14px/1.2 Arial, sans-serif;
+  text-transform: lowercase;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  border:none;
+}
+
+.actions-badge:hover {
+  background: #a36f16;
   transform: translateY(-1px);
 }
 
