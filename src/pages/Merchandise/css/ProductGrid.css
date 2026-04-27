@@ -13,3 +13,159 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2.5rem;
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Append these rules to your existing ProductCard.css
+   and ProductGrid.css files
+   ───────────────────────────────────────────────────────────── */
+
+/* ── ProductCard.css additions ── */
+
+/* Subtle highlight so editing cards stand out */
+.product-card--editing {
+  outline: 2px solid rgba(197, 135, 34, 0.4);
+  outline-offset: 2px;
+}
+
+/* Stack preview image above the file input in edit mode */
+.product-image--edit {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edit-preview {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+/*
+  Category badge in edit mode:
+  Override ALL .category-badge styles so it renders like
+  the compact input in ProductCardForm — not a large badge.
+*/
+.category-badge--input {
+  /* Reset positioning inherited from .category-badge */
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+
+  /* Match ProductCardForm's .category-badge input sizing */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  color: inherit;
+
+  /* Reset any large font the badge may carry */
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  cursor: text;
+  outline: none;
+}
+
+.category-badge--input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+/* Row that holds delete + save */
+.edit-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* delete button — exact red from OurLocations .delete-badge */
+.delete-btn {
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: none;
+  background: #c52222;
+  color: #fff;
+  font: 600 0.82rem/1.2 Arial, sans-serif;
+  text-transform: lowercase;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background: #a31616;
+  transform: translateY(-1px);
+}
+
+.delete-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* save button — exact green from OurLocations .post-badge */
+.save-btn {
+  padding: 6px 16px;
+  border-radius: 9999px;
+  border: none;
+  background: #22c55e;
+  color: #fff;
+  font: 600 0.82rem/1.2 Arial, sans-serif;
+  text-transform: lowercase;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #16a34a;
+  transform: translateY(-1px);
+}
+
+.save-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* ── ProductGrid.css additions ── */
+
+/* Floating toggle — exact gold from OurLocations .actions-badge */
+.actions-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+
+  padding: 10px 16px;
+  border-radius: 9999px;
+  border: none;
+
+  background: #c58722;
+  color: #fff;
+  font: 600 14px/1.2 Arial, sans-serif;
+  text-transform: lowercase;
+
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.actions-toggle-btn:hover {
+  background: #a36f16;
+  transform: translateY(-1px);
+}
+
+/* Active state — slightly darker gold to signal "close" */
+.actions-toggle-btn--active {
+  background: #a36f16;
+}
+
+.actions-toggle-btn--active:hover {
+  background: #8a5c10;
+}

@@ -10,6 +10,7 @@ export default function ProductGrid() {
   const [activeFilter, setActiveFilter] = useState("All");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [actionsMode, setActionsMode] = useState(false);
 
   useEffect(() => {
     fetch("https://csce242-rxy6.onrender.com/api/merchandise")
@@ -31,10 +32,28 @@ export default function ProductGrid() {
 
   const handleProductAdded = (newProduct) => {
     setProducts((prev) => [...prev, newProduct]);
-
     setCategories((prev) => {
       if (prev.includes(newProduct.category)) return prev;
       return [...prev, newProduct.category];
+    });
+  };
+
+  const handleProductDeleted = (deletedId) => {
+    setProducts((prev) => {
+      const updated = prev.filter((p) => p.id !== deletedId);
+      const unique = ["All", ...Array.from(new Set(updated.map((p) => p.category)))];
+      setCategories(unique);
+      return updated;
+    });
+  };
+
+  const handleProductUpdated = (updatedProduct) => {
+    setProducts((prev) =>
+      prev.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
+    );
+    setCategories((prev) => {
+      if (prev.includes(updatedProduct.category)) return prev;
+      return [...prev, updatedProduct.category];
     });
   };
 
@@ -57,12 +76,27 @@ export default function ProductGrid() {
       <div className="products">
         <div className="products-grid">
           {visible.map((p) => (
-            <ProductCard key={p.id} product={p} />
+            <ProductCard
+              key={p.id}
+              product={p}
+              actionsMode={actionsMode}
+              onDeleted={handleProductDeleted}
+              onUpdated={handleProductUpdated}
+            />
           ))}
 
-          <ProductCardForm onProductAdded={handleProductAdded} />
+          {!actionsMode && <ProductCardForm onProductAdded={handleProductAdded} />}
         </div>
       </div>
+
+      {/* ── Floating actions toggle ── */}
+      <button
+        className={`actions-toggle-btn ${actionsMode ? "actions-toggle-btn--active" : ""}`}
+        onClick={() => setActionsMode((prev) => !prev)}
+        title={actionsMode ? "Close actions" : "Edit products"}
+      >
+        {actionsMode ? "close actions" : "edit products"}
+      </button>
     </div>
   );
 }
