@@ -6,6 +6,7 @@
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    border: none;
 }
 
 .product-card:hover {
@@ -22,6 +23,7 @@
     font-size: 5rem;
     position: relative;
     overflow: hidden;
+    padding: 1rem;
 }
 
 .product-image::before {
@@ -29,6 +31,7 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(135deg, rgba(212, 165, 116, 0.1), rgba(193, 124, 74, 0.1));
+    pointer-events: none;
 }
 
 .product-image img {
@@ -45,6 +48,29 @@
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
+    border: none;
+    outline: none;
+    width: auto;
+    max-width: 140px;
+    z-index: 2;
+}
+
+.category-badge::placeholder {
+    color: var(--cream);
+    opacity: 0.8;
+}
+
+.product-image-upload {
+    position: relative;
+    z-index: 2;
+    font-size: 0.9rem;
+    color: var(--espresso);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid var(--latte);
+    border-radius: 12px;
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 220px;
 }
 
 .product-info {
@@ -67,6 +93,40 @@
     flex: 1;
 }
 
+.product-name-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    color: var(--espresso);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.product-name-input::placeholder {
+    color: var(--espresso);
+    opacity: 0.7;
+}
+
+.product-description-input {
+    width: 100%;
+    min-height: 90px;
+    resize: vertical;
+    border: none;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    color: var(--coffee-dark);
+    line-height: 1.5;
+}
+
+.product-description-input::placeholder {
+    color: var(--coffee-dark);
+    opacity: 0.7;
+}
+
 .color-options,
 .size-options {
     margin-bottom: 1rem;
@@ -80,11 +140,33 @@
     color: var(--coffee-dark);
 }
 
-
+.color-dots,
 .size-buttons {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+}
+
+.color-input,
+.size-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--cream);
+    border: 1px solid var(--latte);
+    color: var(--espresso);
+    font-family: 'Lora', serif;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.color-input:focus,
+.size-input:focus,
+.product-image-upload:focus,
+.price-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(193, 124, 74, 0.12);
 }
 
 .size-btn {
@@ -100,6 +182,12 @@
     transition: all 0.2s ease;
 }
 
+.size-btn.active {
+    background: var(--accent);
+    color: var(--cream);
+    border-color: var(--accent);
+}
+
 .size-btn:hover {
     background: var(--latte);
 }
@@ -109,6 +197,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: auto;
+    gap: 1rem;
 }
 
 .price {
@@ -116,6 +205,28 @@
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.price-input {
+    width: 100%;
+    max-width: 120px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font: inherit;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.price-input::placeholder {
+    color: var(--accent);
+    opacity: 0.7;
 }
 
 .add-btn {
@@ -135,3 +246,4 @@
     background: var(--coffee-dark);
     transform: scale(1.05);
 }
+

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import FilterSection from "./FilterSection";
+import ProductCardForm from "./ProductCardForm";
 import "../css/ProductGrid.css";
 
 export default function ProductGrid() {
@@ -28,6 +29,15 @@ export default function ProductGrid() {
       });
   }, []);
 
+  const handleProductAdded = (newProduct) => {
+    setProducts((prev) => [...prev, newProduct]);
+
+    setCategories((prev) => {
+      if (prev.includes(newProduct.category)) return prev;
+      return [...prev, newProduct.category];
+    });
+  };
+
   const visible =
     activeFilter === "All"
       ? products
@@ -43,11 +53,14 @@ export default function ProductGrid() {
         defaultFilter="All"
         onFilterChange={setActiveFilter}
       />
+
       <div className="products">
         <div className="products-grid">
           {visible.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
+
+          <ProductCardForm onProductAdded={handleProductAdded} />
         </div>
       </div>
     </div>
